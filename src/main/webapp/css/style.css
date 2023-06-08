@@ -1,0 +1,22 @@
+#creditos {
+    font-size: 10px;
+}
+
+body {
+    background-color: #1d1e1f;
+    color: white;
+}
+
+h3 {
+    color: #5cb85c;
+}
+
+#h4error {
+    color: red;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #5cb85c;
+    border-color: #5cb85c;
+}
