@@ -11,6 +11,13 @@ h3 {
     color: #5cb85c;
 }
 
+.botao {
+    background: #449d44;
+    border-color: #449d44;
+    color: #FFFFFF;
+    margin: 10px;
+}
+
 #h4error {
     color: red;
 }
