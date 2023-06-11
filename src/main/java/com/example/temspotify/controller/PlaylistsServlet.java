@@ -26,7 +26,7 @@ public class PlaylistsServlet extends HttpServlet {
             Usuario usuario = (Usuario) request.getSession().getAttribute("Usuario");
             if (usuario != null){
                 paginaDestino = "/my-playlists.jsp";
-                if (usuario.getPlayLists() == null){
+                //if (usuario.getPlayLists() == null){
                     DataSource dataSource = new DataSource();
                     PlayListDAO dao = new PlayListDAO(dataSource);
                     List<Object> playlistsFromDb = dao.read(usuario.getId());
@@ -43,7 +43,7 @@ public class PlaylistsServlet extends HttpServlet {
 
                     usuario.setPlayLists(userPlayLists);
                     request.getSession().setAttribute("Usuario", usuario);
-                }
+                //}
             }
         } catch (Exception e) {
             System.out.println("Erro ao recuperar Playlists: ".concat(e.getMessage()));

@@ -14,9 +14,13 @@ h3 {
 .botao {
     background: #449d44;
     border-color: #449d44;
-    color: #FFFFFF;
     margin: 10px;
     border-radius: 25px;
+    text-align: center;
+}
+
+a.nav-linke {
+    color: #ffffff;
 }
 
 #h4error {

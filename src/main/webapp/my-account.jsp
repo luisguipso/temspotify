@@ -35,7 +35,7 @@
     <div class="row">
         <div class="col-md-12">
             <h4 class="text-center">
-                Bem vindo!!! ${Usuario.nome}
+                Bem vindo <a href="/my-account"> ${Usuario.nome} </a> !
             </h4>
         </div>
     </div>
@@ -44,16 +44,16 @@
             &nbsp;
         </div>
         <div class="col-md-2 botao">
-            <span class="text-center"> <a href="./new-music"> Upload Musica </a> </span>
+            <span class="text-center"> <a class="nav-linke" href="./new-music"> Upload Musica </a> </span>
         </div>
         <div class="col-md-2 botao">
-            <span class="text-center"> <a href="./playlists"> Minhas Playlists </a> </span>
+            <span class="text-center"> <a class="nav-linke" href="./playlists"> Minhas Playlists </a> </span>
         </div>
         <div class="col-md-2 botao">
-            <span class="text-center"> <a href="./new-playlist"> Nova Playlist </a> </span>
+            <span class="text-center"> <a class="nav-linke" href="./new-playlist"> Nova Playlist </a> </span>
         </div>
-        <div class="col-md-2  botao">
-            <span class="text-center"> <a href="./logout"> Logout </a> </span>
+        <div class="col-md-2 botao">
+            <span class="text-center"> <a class="nav-linke" href="./logout"> Logout </a> </span>
         </div>
         <div class="col-md-2">
             &nbsp;

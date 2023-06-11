@@ -40,27 +40,23 @@
       </h4>
     </div>
   </div>
-  <div class="row" id="menu">
-    <div class="col-md-3">
+  <div class="row" id="conteudo">
+    <div class="col-md-2">
       &nbsp;
     </div>
-    <div class="col-md-6">
-      <ul class="nav">
-        <li class="nav-item">
-          <a class="nav-link" href="#">Minha Conta</a>
-        </li>
-        <li class="nav-item ml-md-auto">
-          <a class="nav-link" href="playlists">Playlists</a>
-        </li>
-        <li class="nav-item ml-md-auto">
-          <a class="nav-link" href="#">Nova Playlist</a>
-        </li>
-        <li class="nav-item ml-md-auto">
-          <a class="nav-link" href="#">Upload</a>
-        </li>
-      </ul>
+    <div class="col-md-2 botao">
+      <span class="text-center"> <a class="nav-linke" href="./new-music"> Upload Musica </a> </span>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-2 botao">
+      <span class="text-center"> <a class="nav-linke" href="./playlists"> Minhas Playlists </a> </span>
+    </div>
+    <div class="col-md-2 botao">
+      <span class="text-center"> <a class="nav-linke" href="./new-playlist"> Nova Playlist </a> </span>
+    </div>
+    <div class="col-md-2 botao">
+      <span class="text-center"> <a class="nav-linke" href="./logout"> Logout </a> </span>
+    </div>
+    <div class="col-md-2">
       &nbsp;
     </div>
   </div>

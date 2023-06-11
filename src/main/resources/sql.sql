@@ -12,6 +12,8 @@ create table musica
     constraint pk_musica primary key (id)
 );
 
+alter table musica add column titulo varchar(100) after id;
+
 create table usuario (
     id int not null auto_increment,
     nome varchar(100),

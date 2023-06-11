@@ -40,7 +40,7 @@ public class EfetivaCadastroServlet extends HttpServlet {
             System.out.println("Erro ao fechar conexão" + e.getMessage());
             e.printStackTrace();
             request.setAttribute("erroMSG", "Erro ao criar nova conta de usuário: ");
-            pagina = "/erro.jsp";
+            pagina = "/error.jsp";
         }
 
         request.getSession().setAttribute("Usuario", usuario);
