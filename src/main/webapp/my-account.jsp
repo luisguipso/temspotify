@@ -44,18 +44,18 @@
             &nbsp;
         </div>
         <div class="col-md-2 botao">
-            <span class="text-center"> <a href="nova-musica"> Upload Musica </a> </span>
+            <span class="text-center"> <a href="./new-music"> Upload Musica </a> </span>
         </div>
         <div class="col-md-2 botao">
-            <span class="text-center"> <a href="playlists"> Minhas Playlists </a> </span>
+            <span class="text-center"> <a href="./playlists"> Minhas Playlists </a> </span>
         </div>
         <div class="col-md-2 botao">
-            <span class="text-center"> <a href="nova-playlist"> Nova Playlist </a> </span>
+            <span class="text-center"> <a href="./new-playlist"> Nova Playlist </a> </span>
         </div>
         <div class="col-md-2  botao">
-            <span class="text-center"> <a href="logout"> Logout </a> </span>
+            <span class="text-center"> <a href="./logout"> Logout </a> </span>
         </div>
-        <div class="col-md-2  botao">
+        <div class="col-md-2">
             &nbsp;
         </div>
     </div>

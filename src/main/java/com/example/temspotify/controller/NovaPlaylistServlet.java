@@ -10,18 +10,17 @@ import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
 
-@WebServlet(name = "MyPlayListsServlet", value = "/my-playlists")
-public class MyPlayListsServlet extends HttpServlet {
+@WebServlet(name = "NovaPlaylistServlet", value = "/new-playlist")
+public class NovaPlaylistServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Usuario usuario = (Usuario) request.getSession().getAttribute("Usuario");
-        String paginaRetorno = "/index.html";
-
+        String paginaDestino = "/index.html";
         if(usuario != null){
-            paginaRetorno = "/my-playlists.jsp";
+            paginaDestino = "/new-playlist.jsp";
         }
 
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(paginaRetorno);
+        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(paginaDestino);
         dispatcher.forward(request, response);
     }
 }

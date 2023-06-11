@@ -15,5 +15,6 @@ import java.util.List;
 public class PlayList implements Serializable {
     private int id;
     private String titulo;
+    private Usuario usuario;
     private List<Musica> musicas;
 }

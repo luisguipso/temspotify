@@ -50,7 +50,7 @@
           <a class="nav-link" href="#">Minha Conta</a>
         </li>
         <li class="nav-item ml-md-auto">
-          <a class="nav-link" href="./my-playlists">Playlists</a>
+          <a class="nav-link" href="playlists">Playlists</a>
         </li>
         <li class="nav-item ml-md-auto">
           <a class="nav-link" href="#">Nova Playlist</a>

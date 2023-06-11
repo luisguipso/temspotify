@@ -7,9 +7,6 @@
 
   <title>.: TemSpotify by Luis :.</title>
 
-  <meta name="description" content="Source code generated using layoutit.com">
-  <meta name="author" content="LayoutIt!">
-
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
 
@@ -39,7 +36,9 @@
   </div>
   <div class="row">
     <div class="col-md-12">
-      <h4>Fa$ccedil;a Parte</h4>
+      <h4 class="text-center">
+        Fa&ccedil;a Parte
+      </h4>
     </div>
   </div>
   <!------------------------------------------------- FORM ------------------------------------------------->

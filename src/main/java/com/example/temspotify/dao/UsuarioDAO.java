@@ -27,7 +27,7 @@ public class UsuarioDAO implements DAO{
             stm.setString(1, usuario.getNome());
             stm.setString(2, usuario.getEmail());
             stm.setString(3, usuario.getSenha());
-            System.out.println("Executando query: " + sql);
+            System.out.println("Executando comando: " + sql);
             int res = stm.executeUpdate();
             if (res != 0){
                 ResultSet rs = stm.getGeneratedKeys();
@@ -51,7 +51,7 @@ public class UsuarioDAO implements DAO{
             PreparedStatement stm = dataSource.getConnection().prepareStatement(sql);
             stm.setString(1, incompleto.getEmail());
             stm.setString(2, incompleto.getSenha());
-            System.out.println("Executando query: " + sql);
+            System.out.println("Executando comando: " + sql);
             ResultSet rs = stm.executeQuery();
             ArrayList<Object> result = new ArrayList<>();
             if (rs.next()){
