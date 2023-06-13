@@ -24,7 +24,9 @@
   <!------------------------------------------------- LOGO ------------------------------------------------->
   <div class="row">
     <div class="col-md-12" align="center">
+      <a href="./my-account">
       <img src="images/logo.png" class="rounded mx-auto d-block"  width="15%" align="center" />
+      </a>
     </div>
   </div>
   <!------------------------------------------------- TITULO ------------------------------------------------->
@@ -38,7 +40,7 @@
   <div class="row">
     <div class="col-md-12">
       <h4 class="text-center">
-        Crie Sua Playlist ${Usuario.nome}
+        Suba sua m&uacute;sica <a class="nav-linke" href="./my-account">${Usuario.nome}</a>
       </h4>
     </div>
   </div>

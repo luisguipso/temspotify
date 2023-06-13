@@ -20,7 +20,9 @@
     <!------------------------------------------------- LOGO ------------------------------------------------->
     <div class="row">
         <div class="col-md-12">
+            <a href="./my-account">
             <img src="images/logo.png" class="rounded mx-auto d-block" width="15%" align="center"/>
+            </a>
         </div>
     </div>
     <!------------------------------------------------- TITULO ------------------------------------------------->
@@ -35,7 +37,7 @@
     <div class="row">
         <div class="col-md-12">
             <h4 class="text-center">
-                Bem vindo <a href="/my-account"> ${Usuario.nome} </a> !
+                Bem vindo <a href="./my-account" class="nav-linke"> ${Usuario.nome} </a> !
             </h4>
         </div>
     </div>
