@@ -9,13 +9,14 @@ body {
 
 h3 {
     color: #5cb85c;
+    text-shadow: 1px 1px #c0c0c0;
 }
 
 .botao {
     background: #449d44;
     border-color: #449d44;
     margin: 10px;
-    border-radius: 25px;
+    border-radius: 10px;
     text-align: center;
 }
 
@@ -31,4 +32,14 @@ a.nav-linke {
     color: #fff;
     background-color: #5cb85c;
     border-color: #5cb85c;
+}
+
+.artista {
+    color: #ffffff;
+    font-size: x-small;
+}
+
+.tituloMusica {
+    color: #ffffff;
+    font-size: medium;
 }

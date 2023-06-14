@@ -1,5 +1,6 @@
 package com.example.temspotify.dao;
 
+import com.example.temspotify.model.Musica;
 import com.example.temspotify.model.PlayList;
 
 import java.sql.PreparedStatement;
@@ -65,6 +66,43 @@ public class PlayListDAO implements DAO{
             e.printStackTrace();
         }
         return Collections.emptyList();
+    }
+
+    public PlayList readPlayListDetailsById(int id){
+        try {
+            String sql = "select * from playlist p"
+                    + " left join musicas_playlists mp on p.id = mp.playlist_id "
+                    + " left join musica m on m.id = mp.musica_id "
+                    + " where p.id = ? ";
+            PreparedStatement stm = dataSource.getConnection().prepareStatement(sql);
+            stm.setInt(1, id);
+            ResultSet rs = stm.executeQuery();
+            PlayList playList = null;
+            while (rs.next()) {
+                if (playList == null)
+                    playList = PlayList.builder()
+                        .id(rs.getInt("p.id"))
+                        .titulo(rs.getString("p.titulo"))
+                        .musicas(new ArrayList<Musica>())
+                        .build();
+                if(rs.getString("m.titulo") != null) {
+                    Musica musica = Musica.builder()
+                            .id(rs.getInt("m.id"))
+                            .titulo(rs.getString("m.titulo"))
+                            .album(rs.getString("m.album"))
+                            .estilo(rs.getInt("m.estilo"))
+                            .artista(rs.getString("m.artista"))
+                            .linkMP3(rs.getString("m.linkMP3"))
+                            .build();
+                    playList.getMusicas().add(musica);
+                }
+            }
+            return playList;
+        } catch (SQLException e) {
+            System.out.println("Erro ao recuperar detalhes da Playlist: ".concat(e.getMessage()));
+            e.printStackTrace();
+        }
+        return null;
     }
 
     @Override

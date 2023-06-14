@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <jsp:useBean id="Usuario" type="com.example.temspotify.model.Usuario" scope="session"/>
+<jsp:useBean id="PlayList" type="com.example.temspotify.model.PlayList" scope="session"/>
 <%@taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
 <html lang="en">
 <head>
@@ -22,7 +23,7 @@
   <div class="row">
     <div class="col-md-12">
       <a href="./my-account">
-      <img src="images/logo.png" class="rounded mx-auto d-block" width="15%" align="center"/>
+        <img src="images/logo.png" class="rounded mx-auto d-block" width="15%" align="center"/>
       </a>
     </div>
   </div>
@@ -38,7 +39,7 @@
   <div class="row">
     <div class="col-md-12">
       <h4 class="text-center">
-        Bem vindo <a href="./my-account" class="nav-linke"> ${Usuario.nome} </a> !
+        Detalhes da PLaylist: ${PlayList.titulo}
       </h4>
     </div>
   </div>
@@ -62,12 +63,25 @@
       &nbsp;
     </div>
   </div>
-<%-- varias iterações, uma linha por playlist usará JSTL--%>
-  <c:forEach var="playlist" items="${Usuario.playLists}">
+
+  <div class="row">
+    <div class="col-md-2">
+      &nbsp;
+    </div>
+    <div class="col-md-8">
+      <h4>${PlayList.titulo}</h4>
+    </div>
+    <div class="col-md-2">
+      &nbsp;
+    </div>
+  </div>
+  <%-- varias iterações, uma linha por playlist usará JSTL--%>
+  <c:forEach var="musica" items="${PlayList.musicas}">
     <div class="row">
       <div class="col-md-2">&nbsp;</div>
       <div class="col-md-8">
-        <strong><a class="nav-linke" href="playlist-details?id=${playlist.id}">${playlist.titulo}</a></strong>
+        <span class="tituloMusica">${musica.titulo}</span>
+        <span class="artista">${musica.artista} (Album: ${musica.album})</span>
       </div>
       <div class="col-md-2">&nbsp;</div>
     </div>
