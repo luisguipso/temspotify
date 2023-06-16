@@ -114,4 +114,20 @@ public class PlayListDAO implements DAO{
     public void delete(Object o) {
 
     }
+
+    public boolean createMusicaPlaylist(int idPlaylist, int idMusica) {
+        try {
+            String sql = "INSERT INTO musicas_playlists VALUES (?, ?)";
+            PreparedStatement stm = dataSource.getConnection().prepareStatement(sql);
+            stm.setInt(1,idMusica);
+            stm.setInt(2,idPlaylist);
+            System.out.println("Executando comando: ".concat(sql));
+            stm.executeUpdate();
+            return true;
+        } catch (SQLException e) {
+            System.out.println("Erro ao inserir: ".concat(e.getMessage()));
+            e.printStackTrace();
+        }
+        return false;
+    }
 }

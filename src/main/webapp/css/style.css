@@ -28,7 +28,7 @@ a.nav-linke {
     color: red;
 }
 
-.btn-primary {
+.btn {
     color: #fff;
     background-color: #5cb85c;
     border-color: #5cb85c;
@@ -42,4 +42,8 @@ a.nav-linke {
 .tituloMusica {
     color: #ffffff;
     font-size: medium;
+}
+
+.playicon {
+    width: 5%;
 }

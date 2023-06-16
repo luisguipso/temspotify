@@ -3,8 +3,10 @@ package com.example.temspotify.dao;
 import com.example.temspotify.model.Musica;
 
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.SQLOutput;
+import java.util.ArrayList;
 import java.util.List;
 
 public class MusicaDAO implements DAO {
@@ -41,6 +43,28 @@ public class MusicaDAO implements DAO {
 
     @Override
     public List<Object> read(Object o) {
+        try {
+            String sql = "SELECT * FROM musica ORDER BY titulo";
+            PreparedStatement stm = dataSource.getConnection().prepareStatement(sql);
+            System.out.println("Executando query: ".concat(sql));
+            ResultSet rs = stm.executeQuery();
+            List<Object> musicas = new ArrayList<>();
+            while(rs.next()){
+                Musica musica = Musica.builder()
+                        .id(rs.getInt("id"))
+                        .titulo(rs.getString("titulo"))
+                        .artista(rs.getString("artista"))
+                        .album(rs.getString("album"))
+                        .estilo(rs.getInt("estilo"))
+                        .linkMP3(rs.getString("linkMP3"))
+                        .build();
+                musicas.add(musica);
+            }
+            return musicas;
+        } catch (SQLException e){
+            System.out.println("Erro ao recuperar musica: ".concat(e.getMessage()));
+            e.printStackTrace();
+        }
         return null;
     }
 
