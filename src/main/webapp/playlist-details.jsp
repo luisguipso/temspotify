@@ -69,7 +69,11 @@
             &nbsp;
         </div>
         <div class="col-md-8">
-            <h4>${PlayList.titulo} <img class="playicon" src="images/play.png" alt="Tocar Playlist"></h4>
+            <h4>${PlayList.titulo}
+                <a href="./player">
+                    <img class="playicon" src="images/play.png" alt="Tocar Playlist">
+                </a>
+            </h4>
         </div>
         <div class="col-md-2">
             &nbsp;
