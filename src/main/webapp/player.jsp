@@ -23,7 +23,7 @@
     <div class="row">
         <div class="col-md-12">
             <a href="playlists">
-                <img src="images/logo.png" class="rounded mx-auto d-block" width="15%" align="center"/>
+                <img src="images/logo.png" alt="logo" class="rounded mx-auto d-block" width="15%" align="center"/>
             </a>
 
         </div>
@@ -68,7 +68,7 @@
                     &nbsp;
                 </div>
                 <div class="col-md-3 text-right">
-                    <img id="imgRepeat" src="images/repeat.png" onclick="changeRepeat()"
+                    <img id="imgRepeat" src="images/repeat.png" alt="repeat" onclick="changeRepeat()"
                          height="60px"/>
                 </div>
                 <div class="col-md-5 text-left">

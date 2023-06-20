@@ -5,7 +5,6 @@ import com.example.temspotify.model.Musica;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -43,9 +42,8 @@ public class MusicaDAO implements DAO {
 
     @Override
     public List<Object> read(Object o) {
-        try {
-            String sql = "SELECT * FROM musica ORDER BY titulo";
-            PreparedStatement stm = dataSource.getConnection().prepareStatement(sql);
+        String sql = "SELECT * FROM musica ORDER BY titulo";
+        try (PreparedStatement stm = dataSource.getConnection().prepareStatement(sql)){
             System.out.println("Executando query: ".concat(sql));
             ResultSet rs = stm.executeQuery();
             List<Object> musicas = new ArrayList<>();

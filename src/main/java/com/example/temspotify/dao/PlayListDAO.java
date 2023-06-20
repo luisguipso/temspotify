@@ -20,10 +20,9 @@ public class PlayListDAO implements DAO{
 
     @Override
     public void create(Object o) {
-        try{
-            PlayList pl = (PlayList) o;
-            String sql = "INSERT INTO playlist values (null, ?, ?)";
-            PreparedStatement stm = dataSource.getConnection().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+        String sql = "INSERT INTO playlist values (null, ?, ?)";
+        PlayList pl = (PlayList) o;
+        try (PreparedStatement stm = dataSource.getConnection().prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)){
             stm.setString(1, pl.getTitulo());
             stm.setInt(2, pl.getUsuario().getId());
             System.out.println("Executando comando: " + sql);
@@ -69,12 +68,11 @@ public class PlayListDAO implements DAO{
     }
 
     public PlayList readPlayListDetailsById(int id){
-        try {
-            String sql = "select * from playlist p"
-                    + " left join musicas_playlists mp on p.id = mp.playlist_id "
-                    + " left join musica m on m.id = mp.musica_id "
-                    + " where p.id = ? ";
-            PreparedStatement stm = dataSource.getConnection().prepareStatement(sql);
+        String sql = "select * from playlist p"
+                + " left join musicas_playlists mp on p.id = mp.playlist_id "
+                + " left join musica m on m.id = mp.musica_id "
+                + " where p.id = ? ";
+        try (PreparedStatement stm = dataSource.getConnection().prepareStatement(sql)){
             stm.setInt(1, id);
             ResultSet rs = stm.executeQuery();
             PlayList playList = null;
@@ -83,7 +81,7 @@ public class PlayListDAO implements DAO{
                     playList = PlayList.builder()
                         .id(rs.getInt("p.id"))
                         .titulo(rs.getString("p.titulo"))
-                        .musicas(new ArrayList<Musica>())
+                        .musicas(new ArrayList<>())
                         .build();
                 if(rs.getString("m.titulo") != null) {
                     Musica musica = Musica.builder()
@@ -116,9 +114,8 @@ public class PlayListDAO implements DAO{
     }
 
     public boolean createMusicaPlaylist(int idPlaylist, int idMusica) {
-        try {
-            String sql = "INSERT INTO musicas_playlists VALUES (?, ?)";
-            PreparedStatement stm = dataSource.getConnection().prepareStatement(sql);
+        String sql = "INSERT INTO musicas_playlists VALUES (?, ?)";
+        try (PreparedStatement stm = dataSource.getConnection().prepareStatement(sql)){
             stm.setInt(1,idMusica);
             stm.setInt(2,idPlaylist);
             System.out.println("Executando comando: ".concat(sql));

@@ -1,4 +1,4 @@
-let musics = new Array();
+let musics = [];
 let repeat = false;
 let currentSong = 0;
 const URL = "http://localhost:8080/temspotify/";

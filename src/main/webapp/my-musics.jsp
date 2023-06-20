@@ -24,7 +24,7 @@
     <div class="row">
         <div class="col-md-12">
             <a href="./my-account">
-                <img src="images/logo.png" class="rounded mx-auto d-block" width="15%" align="center"/>
+                <img src="images/logo.png" alt="logo" class="rounded mx-auto d-block" width="15%" align="center"/>
             </a>
         </div>
     </div>

@@ -2,7 +2,6 @@ package com.example.temspotify.controller;
 
 import com.example.temspotify.dao.DataSource;
 import com.example.temspotify.dao.PlayListDAO;
-import com.example.temspotify.model.Musica;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -11,7 +10,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
-import java.sql.SQLException;
 
 @WebServlet(name = "IncluirNaPlaylistServlet", value = "/add-on-playlist")
 public class IncluirNaPlaylistServlet extends HttpServlet {
